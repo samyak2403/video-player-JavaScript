@@ -63,3 +63,8 @@ mainVideo.addEventListener("play", () => {
 mainVideo.addEventListener("pause", () => {
   pauseVideo();
 });
+
+// fast_rewind video function
+fast_rewind.addEventListener("click", () => {
+  mainVideo.currentTime -= 10;
+});
