@@ -50,3 +50,16 @@ function pauseVideo() {
   video_player.classList.remove("paused");
   mainVideo.pause();
 }
+
+play_pause.addEventListener("click", () => {
+  const isVideoPaused = video_player.classList.contains("paused");
+  isVideoPaused ? pauseVideo() : playVideo();
+});
+
+mainVideo.addEventListener("play", () => {
+  playVideo();
+});
+
+mainVideo.addEventListener("pause", () => {
+  pauseVideo();
+});
