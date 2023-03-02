@@ -42,3 +42,11 @@ function playVideo() {
   video_player.classList.add("paused");
   mainVideo.play();
 }
+
+// Pause video function
+function pauseVideo() {
+  play_pause.innerHTML = "play_arrow";
+  play_pause.title = "play";
+  video_player.classList.remove("paused");
+  mainVideo.pause();
+}
