@@ -22,3 +22,23 @@ const video_player = document.querySelector("#video_player"),
   caption_labels = video_player.querySelector("#captions ul"),
   playback = video_player.querySelectorAll(".playback li"),
   tracks = video_player.querySelectorAll("track");
+let thumbnail = video_player.querySelector(".thumbnail");
+if (tracks.length != 0) {
+  caption_labels.insertAdjacentHTML(
+    "afterbegin",
+    `<li data-track="OFF" class="active">OFF</li>`
+  );
+  for (let i = 0; i < tracks.length; i++) {
+    trackLi = `<li data-track="${tracks[i].label}">${tracks[i].label}</li>`;
+    caption_labels.insertAdjacentHTML("beforeend", trackLi);
+  }
+}
+const caption = captions.querySelectorAll("ul li");
+
+// Play video function
+function playVideo() {
+  play_pause.innerHTML = "pause";
+  play_pause.title = "pause";
+  video_player.classList.add("paused");
+  mainVideo.play();
+}
